@@ -56,15 +56,19 @@
       <ion-title>
         Navegación
       </ion-title>
+
       <ion-item>
-        <ion-router-link color="success" href="../home"> <ion-icon name="home-sharp"></ion-icon> Inicio </ion-router-link>
+        <ion-button color="success" [routerLink]="['../home']"><ion-icon name="home-sharp"></ion-icon> Inicio </ion-button>
       </ion-item>
+
       <ion-item>
-        <ion-router-link color="success" href="../autor"> <ion-icon name="person-sharp"></ion-icon> Autor </ion-router-link>
+        <ion-button color="success" [routerLink]="['../autor']"><ion-icon name="person-sharp"></ion-icon> Autor </ion-button>
       </ion-item>
+
       <ion-item>
-        <ion-router-link color="success" href="../videoclub"> <ion-icon name="videocam-sharp"></ion-icon> iVideoclub </ion-router-link>
+        <ion-button color="success" [routerLink]="['../videoclub']"><ion-icon name="videocam-sharp"></ion-icon> iVideoclub </ion-button>
       </ion-item>
+
     </ion-toolbar>
   </ion-footer>
 
