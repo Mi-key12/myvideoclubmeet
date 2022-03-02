@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Autor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Autor</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <h1>Autor</h1>
+  <p>Contenido de ejemplo</p>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Información
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aplicación desarrollada por
+      A continuación puede consultar más
+      información sobre el autor.
+      <ion-item button>
+        <ion-icon name="book-outline" slot="start"></ion-icon>
+        Currículum vitae
+      </ion-item>
+      <ion-item href="mailto:mike3053nd@gmail.com">
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <p><strong>Correo:</strong> mike3053nd@gmail.com</p>
+      </ion-item>
+      <ion-item href="@twitter">
+        <ion-icon name="logo-twitter" slot="start"></ion-icon>
+        <p><strong>Twitter:</strong> @twitter</p>
+      </ion-item>
+      <ion-item href="tel:6568600366">
+        <ion-icon name="call" slot="start"></ion-icon>
+        <p><strong>Teléfono:</strong> 6568600366</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-router-link color="success" href="../home"> Inicio </ion-router-link>
+  <ion-router-link color="success" href="../curriculum"> Curriculum </ion-router-link>
+  <ion-router-link color="success" href="../videoclub"> iVideoclub </ion-router-link> -->
+
+  <ion-footer collapse="fade">
+    <ion-toolbar>
+      <ion-footer-title>
+        Navegación
+      </ion-footer-title>
+      <ion-item>
+        <ion-router-link color="success" href="../home"> <ion-icon name="home-sharp"></ion-icon> Inicio </ion-router-link>
+      </ion-item>
+      <ion-item>
+        <ion-router-link color="success" href="../curriculum"> <ion-icon name="book-sharp"></ion-icon> Curriculum </ion-router-link>
+      </ion-item>
+      <ion-item>
+        <ion-router-link color="success" href="../videoclub"> <ion-icon name="videocam-sharp"></ion-icon> iVideoclub </ion-router-link>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>

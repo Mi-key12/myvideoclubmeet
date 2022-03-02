@@ -1,20 +1,67 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Inicio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+  <h1>Inicio</h1>
+  <p>Contenido de ejemplo</p>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Bienvenido a</ion-card-subtitle>
+      <ion-card-title>¡Videoclub!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      iVideoclub es una aplicación desarrollada con ionic.
+      Para acceder a la gestión del videoclub pulsa el siguiente botón:
+      <ion-item button>
+        <ion-icon name="videocam-sharp" slot="start"></ion-icon>
+        <ion-label>Acceso a iVideoclub</ion-label>
+      </ion-item>    
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información sobre el autor</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aplicación desarrollada por
+      <ion-item button>
+        <ion-icon name="person-sharp" slot="start"></ion-icon>
+        <ion-label>
+          Consultar información
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <ion-footer-title>
+      Navegación
+    </ion-footer-title>
+    <ion-item>
+      <ion-router-link color="success" href="../autor"> <ion-icon name="person-sharp"></ion-icon> Autor </ion-router-link>
+    </ion-item>
+    <ion-item>
+      <ion-router-link color="success" href="../curriculum"> <ion-icon name="book-sharp"></ion-icon> Curriculum </ion-router-link>
+    </ion-item>
+    <ion-item>
+      <ion-router-link color="success" href="../videoclub"> <ion-icon name="videocam-sharp"></ion-icon> iVideoclub </ion-router-link>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
+  <!-- <div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  </div> -->
 </ion-content>
