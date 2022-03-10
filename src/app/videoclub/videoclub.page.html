@@ -1,6 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
+    <ion-buttons slot="start" routerLink="/home">
+      <ion-back-button text="" icon="chevron-back-sharp"></ion-back-button>
+    </ion-buttons>
     <ion-title>iVideoclub</ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="modoLista" (click)="cambiarVista()">
+        <ion-icon slot="icon-only" name="apps-sharp"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="!modoLista" (click)="cambiarVista()">
+        <ion-icon slot="icon-only" name="reorder-four-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,132 +22,43 @@
     </ion-toolbar>
   </ion-header>
 
-  <h1>iVideoclub</h1>
-  <p>Contenido de ejemplo</p>
+  <ion-list *ngIf="modoLista; else modoGrid">
+    <ion-list *ngFor="let pelicula of peliculas">
 
-  <ion-list>
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/lucy-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>Lucy</h1>
-        <p><strong>Director:</strong> Luc Besson</p>
-        <p><strong>Año:</strong> 2014</p>
-      </ion-label>
-    </ion-item>
+      <ion-card (click)="verPaginaDetalle(pelicula.id)">
+        <ion-card-header>
+          <img src="{{ pelicula.imgpath }}" alt="{{ pelicula.titulo }} detalles" />
+        </ion-card-header>
+        <ion-card-content>
+          <h1>{{ pelicula.titulo }}</h1>
+          <p><strong>Director:</strong> {{ pelicula.director }}</p>
+          <p><strong>Año:</strong> {{ pelicula.anio }}</p>
+        </ion-card-content>
+      </ion-card>
 
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/ilusionistas-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>Los ilusionistas</h1>
-        <p><strong>Director:</strong> Louis Leterrier</p>
-        <p><strong>Año:</strong> 2013</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/musica-amigos-fiesta-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>Música, Amigos y Fiesta</h1>
-        <p><strong>Director:</strong> Max Joseph</p>
-        <p><strong>Año:</strong> 2015</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/proyecto-x-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>Proyecto X</h1>
-        <p><strong>Director:</strong> Nima Nourizadeh</p>
-        <p><strong>Año:</strong> 2012</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/super-cool-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>Super cool</h1>
-        <p><strong>Director:</strong> Greg Mottola</p>
-        <p><strong>Año:</strong> 2007</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/que-paso-ayer-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>¿Qué pasó ayer?</h1>
-        <p><strong>Director:</strong> Todd Phillips</p>
-        <p><strong>Año:</strong> 2019</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/zombieland-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>Bienvenidos a Zombieland</h1>
-        <p><strong>Director:</strong> Ruben Fleischer</p>
-        <p><strong>Año:</strong> 2009</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/red-social-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>Red social</h1>
-        <p><strong>Director:</strong> David Fincher</p>
-        <p><strong>Año:</strong> 2010</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item detail="true">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/operacion-ultra-movie.jpg" alt="an image">
-      </ion-avatar>
-      <ion-label>
-        <h1>Operación Ultra</h1>
-        <p><strong>Director:</strong> Nima Nourizadeh</p>
-        <p><strong>Año:</strong> 2015</p>
-      </ion-label>
-    </ion-item>
+    </ion-list>
   </ion-list>
 
-  <!-- <ion-router-link color="success" href="../home"> Inicio </ion-router-link>
-  <ion-router-link color="success" href="../autor"> Autor </ion-router-link>
-  <ion-router-link color="success" href="../curriculum"> Curriculum </ion-router-link> -->
+  <ng-template #modoGrid class="ion-no-padding">
+    <ion-grid>
+      <ion-row *ngFor="let pelicula of peliculas">
+        <ion-col size="12">
 
-  <ion-footer collapse="fade">
-    <ion-toolbar>
-      <ion-title>
-        Navegación
-      </ion-title>
+          <ion-card (click)="verPaginaDetalle(pelicula.id)">
+            <ion-card-header>
+              <img src="{{ pelicula.imgpath }}" alt="{{ pelicula.titulo }} detalles" />
+            </ion-card-header>
+            <ion-card-content>
+              <h1>{{ pelicula.titulo }}</h1>
+              <p><strong>Director:</strong> {{ pelicula.director }}</p>
+              <p><strong>Año:</strong> {{ pelicula.anio }}</p>
+            </ion-card-content>
+          </ion-card>
 
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../home']"><ion-icon name="home-sharp"></ion-icon> Inicio </ion-button>
-      </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../autor']"><ion-icon name="person-sharp"></ion-icon> Autor </ion-button>
-      </ion-item>
+  </ng-template>
 
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../curriculum']"><ion-icon name="book-sharp"></ion-icon> Curriculum </ion-button>
-      </ion-item>
-
-    </ion-toolbar>
-  </ion-footer>
 </ion-content>

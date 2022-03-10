@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./autor.page.scss'],
 })
 export class AutorPage implements OnInit {
+  autor: {
+    nombre: string;
+    email: string;
+    twitter: string;
+    telefono: string;
+  };
 
   constructor() { }
 

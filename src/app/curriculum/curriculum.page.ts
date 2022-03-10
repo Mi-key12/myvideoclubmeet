@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { curriculum } from '../colecciones';
 
 @Component({
   selector: 'app-curriculum',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./curriculum.page.scss'],
 })
 export class CurriculumPage implements OnInit {
+  datos = curriculum;
 
   constructor() { }
 

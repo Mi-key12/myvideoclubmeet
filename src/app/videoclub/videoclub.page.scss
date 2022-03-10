@@ -1,0 +1,28 @@
+ion-list {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+ion-grid {
+    display: grid;
+    text-align: center;
+}
+
+@media all and (min-width: 576px) {
+    ion-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (min-width: 720px) {
+    ion-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media all and (min-width: 992px) {
+    ion-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

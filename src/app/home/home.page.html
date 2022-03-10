@@ -11,9 +11,6 @@
     </ion-toolbar>
   </ion-header>
 
-  <h1>Inicio</h1>
-  <p>Contenido de ejemplo</p>
-
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle>Bienvenido a</ion-card-subtitle>
@@ -22,7 +19,7 @@
     <ion-card-content>
       iVideoclub es una aplicación desarrollada con ionic.
       Para acceder a la gestión del videoclub pulsa el siguiente botón:
-      <ion-item button>
+      <ion-item button routerLink="/videoclub">
         <ion-icon name="videocam-sharp" slot="start"></ion-icon>
         <ion-label>Acceso a iVideoclub</ion-label>
       </ion-item>    
@@ -35,7 +32,7 @@
     </ion-card-header>
     <ion-card-content>
       Aplicación desarrollada por
-      <ion-item button>
+      <ion-item button routerLink="/autor">
         <ion-icon name="person-sharp" slot="start"></ion-icon>
         <ion-label>
           Consultar información
@@ -44,29 +41,4 @@
     </ion-card-content>
   </ion-card>
   
-<ion-footer collapse="fade">
-  <ion-toolbar>
-    
-    <ion-title>
-      Navegación
-    </ion-title>
-
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../autor']"><ion-icon name="person-sharp"></ion-icon> Autor </ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../curriculum']"><ion-icon name="book-sharp"></ion-icon> Curriculum </ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../videoclub']"><ion-icon name="videocam-sharp"></ion-icon> iVideoclub </ion-button>
-      </ion-item>
-      
-  </ion-toolbar>
-</ion-footer>
-  <!-- <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div> -->
 </ion-content>

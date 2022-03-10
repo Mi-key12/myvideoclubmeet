@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
+    <ion-buttons slot="start" routerLink="/autor">
+      <ion-back-button text="" icon="chevron-back-sharp"></ion-back-button>
+    </ion-buttons>
     <ion-title>Currículum</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,65 +14,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <h1>Currículum</h1>
-  <p>Contenido de ejemplo</p>
-
-  <ion-list>
+  <ion-list *ngFor="let dato of datos">
     <ion-list-header>
-      <h1>2021-actualidad:</h1>
+      <h1>{{ dato.fecha }}</h1>
     </ion-list-header>
     <ion-item>
-      Cursando ingenieria en desarrollo de software multiplataforma - UTCJ
-    </ion-item>
-    <ion-list-header>
-      <h1>2020-actualidad:</h1>
-    </ion-list-header>
-    <ion-item>
-      CEO startup y programador principal - Blink Code
-    </ion-item>
-    <ion-list-header>
-      <h1>2020-2020:</h1>
-    </ion-list-header>
-    <ion-item>
-      Desarrollo y despliegue de aplicación UTCJournal, (Programador Líder)
-    </ion-item>
-    <ion-list-header>
-      <h1>2020-2020:</h1>
-    </ion-list-header>
-    <ion-item>
-      Desarrollo y despliegue de aplicación ThinkerBell, (Programador Secundario - QA Tester)
-    </ion-item>
-    <ion-list-header>
-      <h1>2019-2019:</h1>
-    </ion-list-header>
-    <ion-item>
-      Desarrollo y despliegue de aplicación TeenMath, (Programador Secundario - Administrador de Base de datos)
+      {{ dato.descripcion }}
     </ion-item>
   </ion-list>
-
-  <!-- <ion-router-link color="success" href="../home"> Inicio </ion-router-link>
-  <ion-router-link color="success" href="../autor"> Autor </ion-router-link>
-  <ion-router-link color="success" href="../videoclub"> iVideoclub </ion-router-link> -->
-
-  <ion-footer collapse="fade">
-    <ion-toolbar>
-      <ion-title>
-        Navegación
-      </ion-title>
-
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../home']"><ion-icon name="home-sharp"></ion-icon> Inicio </ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../autor']"><ion-icon name="person-sharp"></ion-icon> Autor </ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-button color="success" [routerLink]="['../videoclub']"><ion-icon name="videocam-sharp"></ion-icon> iVideoclub </ion-button>
-      </ion-item>
-
-    </ion-toolbar>
-  </ion-footer>
 
 </ion-content>

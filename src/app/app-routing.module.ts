@@ -4,8 +4,14 @@ import { HomePage } from './home/home.page';
 import { AutorPage } from './autor/autor.page';
 import { CurriculumPage } from './curriculum/curriculum.page';
 import { VideoclubPage } from './videoclub/videoclub.page';
+import { DetallePage } from './detalle/detalle.page';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
   {
     path: 'home',
     component: HomePage,
@@ -27,9 +33,13 @@ const routes: Routes = [
     loadChildren: () => import('./videoclub/videoclub.module').then( m => m.VideoclubPageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'detalle',
+    component: DetallePage,
+    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'detalle/:id',
+    component: DetallePage
   },
 ];
 
